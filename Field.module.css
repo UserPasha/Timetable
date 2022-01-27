@@ -1,0 +1,15 @@
+.FieldWrapper {
+    width: 1400px;
+    height: 80px;
+    margin: 10px auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #d4dada;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.FieldTitle{
+    border-left: 1px dimgray dotted ;
+    padding: 5px;
+}
