@@ -2,24 +2,29 @@ import React from 'react';
 import c from "./Field.module.css"
 
 type FieldPropsType = {
-    name: string
-    title: string
+    date: string,
+    start: string,
+    end: string,
+    ava: string,
+    name: string,
+    title: string,
+    remain: string
 }
 
 export const Field = (props: FieldPropsType) => {
     return (
         <div className={c.FieldWrapper}>
             <div>
-                GAG
+                {props.date}
             </div>
             <div className={c.FieldTitle}>
-                GAG
+                {props.start}
             </div>
             <div className={c.FieldTitle}>
-                GAG
+                {props.end}
             </div>
             <div>
-                GAG
+                {props.ava}
             </div>
             <div className={c.FieldName}>
                 {props.name}
@@ -28,7 +33,7 @@ export const Field = (props: FieldPropsType) => {
                 {props.title}
             </div>
             <div>
-                GAG
+                {props.remain}
             </div>
         </div>
     );
