@@ -1,5 +1,6 @@
 import React from 'react';
 import c from "./Field.module.css"
+import {FilterPropsType, ListType} from "./TimeTable";
 
 type FieldPropsType = {
     date: string,
@@ -9,6 +10,7 @@ type FieldPropsType = {
     name: string,
     title: string,
     remain: string
+    group: FilterPropsType
 }
 
 export const Field = (props: FieldPropsType) => {
@@ -34,6 +36,9 @@ export const Field = (props: FieldPropsType) => {
             </div>
             <div>
                 {props.remain}
+            </div>
+            <div>
+                {props.group}
             </div>
         </div>
     );
