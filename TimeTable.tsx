@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Field} from "./Field";
 import ButtonTT from "./ButtonTT";
 import {v1} from "uuid";
+import {type} from "os";
 
 export type ListType = {
     id: string
@@ -17,17 +18,32 @@ export type ListType = {
 export type FilterPropsType = "All" | 52 | 53 | 54 | 55
 
 
+export type SettingTimeType ={
+    firstDataDate: any
+    today: any
+}
 export const TimeTable = () => {
 
 let today = new Date().toLocaleString()
+
+
+    const firstDataDate = new Date('2022-06-02T10:00')
+    const firstDate = firstDataDate.toLocaleString()
+    const endFirstDate =  new Date('2022-06-02T14:00').toLocaleString()
+
+    const secondDate = new Date('2022-06-02T11:00').toLocaleString()
+    const endSecondDate =  new Date('2022-06-02T14:00').toLocaleString()
+    const thirstDate = new Date('2022-06-02T12:00').toLocaleString()
+    const fourthtDate = new Date('2022-06-02T13:00').toLocaleString()
+
 
     let [list, setList] = useState<Array<ListType>>(
         [
             {
                 id: v1(),
-                date: 'GAG',
-                start: 'GAG',
-                end: 'GAG',
+                date: firstDate,
+                start:'GAG',
+                end: endFirstDate,
                 ava: 'GAG',
                 name: "Леонид",
                 title: "Support JS/TS",
@@ -36,9 +52,9 @@ let today = new Date().toLocaleString()
             },
             {
                 id: v1(),
-                date: 'GAG',
+                date: secondDate,
                 start: 'GAG',
-                end: 'GAG',
+                end: endSecondDate,
                 ava: 'GAG',
                 name: "Максим",
                 title: "Support JS/TS",
@@ -47,7 +63,7 @@ let today = new Date().toLocaleString()
             },
             {
                 id: v1(),
-                date: 'GAG',
+                date: thirstDate,
                 start: 'GAG',
                 end: 'GAG',
                 ava: 'GAG',
@@ -58,7 +74,7 @@ let today = new Date().toLocaleString()
             },
             {
                 id: v1(),
-                date: 'GAG',
+                date: fourthtDate,
                 start: 'GAG',
                 end: 'GAG',
                 ava: 'GAG',
@@ -73,9 +89,9 @@ let today = new Date().toLocaleString()
     let [filter, setFilter] = useState<FilterPropsType>("All")
 
 
-    const x = () => {
-        console.log("x")
-    }
+
+        //console.log(firstDate)
+
 
     let filteredList = list
     //     let filteredList = list.filter(f => f.group === value)
@@ -95,7 +111,9 @@ let today = new Date().toLocaleString()
     const mappedList = filteredList.map(l => <Field key={l.id} {...l}/>)
     return (
         <div>
+            <div>
             {today}
+            </div>
             <div>
                 <ButtonTT name={52} setFilter={setFilter}/>
                 <ButtonTT name={53} setFilter={setFilter}/>
